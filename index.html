@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <title>To-do List</title>
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="vendor/jquery-ui.min.css" />
+        <link rel="stylesheet" href="assets/todo.css" />
+    </head>
+
+    <body class="well">
+        <div id="container">
+
+          <div class="menu">
+  				<h3>Info</h3>
+  				<img id="infoImagen" src="assets/libro1.jpg" alt="Sherlock" style="width:130px;height:200px;">
+  				<br>
+  				<div class="row">
+  					<div class="col-md-12">
+  				<div id="infoSinopsis" class="sinopsis">
+  					Sherlock Holmes is a fictional character created by British author and physician Sir Arthur Conan Doyle. A London-based "consulting detective" whose abilities border on the fantastic, Holmes is known for his astute logical reasoning, his ability to adopt almost any disguise, and his use of forensic science to solve difficult cases.
+
+  The character first appeared in print in 1887, and was featured in four novels and 56 short stories by Conan Doyle, as well as later works by other authors. The first novel, A Study in Scarlet, appeared in Beeton's Christmas Annual in 1887 and the second, The Sign of the Four, in Lippincott's Monthly Magazine in 1890. The character's popularity grew with the first series of short stories in The Strand Magazine, beginning with "A Scandal in Bohemia" in 1891; additional short-story series and two novels (published in serial form) appeared from then to 1927. The events in the stories take place from about 1880 to 1914.
+  				</div>
+  				</div>
+  				</div>
+  				<div class="row separacion">
+                      <div class="col-md-4">
+                          <div  class="checkbox">
+                                <label><input id="infoPorLeer" type="checkbox" value="">Por Leer</label>
+                          </div>
+                      </div>
+                      <div  class="col-md-4">
+                          <div class="checkbox">
+                                <label><input id="infoLeido" type="checkbox" value="">Leido</label>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <button type="button" class="btn btn-success">
+                              Leer <span class="glyphicon glyphicon-share-alt"></span>
+                          </button>
+                      </div>
+                  </div>
+  				<div id="infoFavorito" onclick="favoritear()">
+  					<div class="favyes btn btn-sm btn-danger"><span class="glyphicon glyphicon-heart"></span>  </div>
+  					<div class="favno btn btn-sm btn-default"><span class="glyphicon glyphicon-heart-empty"></span>  </div>
+  				</div>
+
+  			</div>
+
+  			<div class="menu2">
+  				<h3>Filtrar</h3>
+  				<button type="button" class="btn btn-default" align="bottom">
+  					Ver Todos <span class="glyphicon glyphicon-book"></span>
+  				</button>
+  <!--				<button type="button" class="botonNuevo">
+  					<span class="glyphicon glyphicon-heart"></span> Favorito
+  				</button>
+  <img src="/home/alumno/Descargas/OrdenadorDeLibros-master (2)/assets/tuslibros.png" alt="Tus Libros" width="400" height="100" align="left">XXXXXXXXXXXXX
+  				<button type="button" class="btn btn-default">
+  					Filtros <span class="glyphicon glyphicon-align-left"></span>
+  				</button>
+
+  				<input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
+  -->
+  				<button type="button" class="btn btn-default btnizq">
+  					Favoritos <span class="glyphicon glyphicon-heart"></span>
+  				</button>
+  				<br>
+  				<button type="button" class="btn btn-default btnizq">
+  					Leidos <span class="glyphicon glyphicon-ok"></span>
+  				</button>
+  				<br>
+  				<button type="button" class="btn btn-default btnizq">
+  					No Leidos <span class="glyphicon glyphicon-remove"></span>
+  				</button>
+
+  				<button type="button" class="btn btn-default btnizq">
+  					Por Leer <span class="glyphicon glyphicon-pushpin"></span>
+  				</button>
+  				<!--
+  				<button type="button" class="btn btn-default">
+  					<span class="glyphicon glyphicon-plus-sign"></span>
+  				</button>
+  				-->
+
+
+  			</div>
+
+
+            <button id="nuevoLibro" type="button" class="btn btn-default btnizq btn-circle nuevoLibro" onclick="todo.visibilidad(0);">
+					<span class="glyphicon glyphicon-plus"></span>
+			</button>
+
+      <form id="entrada" style="display:none;">
+          <div class="cajaInput">
+              <h4 class="titulosInput">Titulo:</h4>
+              <input id="entradaTitulo" type="text" class="form-control entradas" >
+              <h4 class="titulosInput">Sinopsis:</h4>
+              <textarea id="entradaSinopsis" rows="1"></textarea>
+              <h4 class="titulosInput">Ubicacion PDF:</h4>
+              <input id="entradaPdf" type="text" class="form-control entradas" />
+              <h4 class="titulosInput">Ubicacion imagen</h4>
+              <input id="entradaImagen" type="text" class="form-control entradas" />
+              <button type="button" class="btn btn-danger botonInput" onclick="todo.visibilidad(1);">Cancelar</button>
+          <button type="button" class="btn btn-success botonInput" onclick="todo.add();">Aceptar</button>
+<!--
+              <h3><FONT FACE="arial" SIZE=5 COLOR=white>Titulo:</FONT></h3>
+              <input type="text" class="form-control" >
+              <h3><FONT FACE="arial" SIZE=5 COLOR=white>Sinopsis:</FONT></h3>
+              <textarea ></textarea>
+              <h3><FONT FACE="arial" SIZE=5 COLOR=white>Direccion del PDF:</FONT></h3>
+              <input type="text"  >
+              <h3><FONT FACE="arial" SIZE=5 COLOR=white>Direccion de la imagen:</FONT></h3>
+              <input type="text" >
+              <br>
+              <div class="boton">
+            <button align="center" type="button" class="btn btn-danger" onclick="visibilidad(1);">Cancelar</button>
+          <button type="button" class="btn btn-success" onclick="todo.add();">Aceptar</button>
+-->
+          </div>
+      </form>
+
+
+<div class="menu3">
+
+</head>
+<body>
+
+
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock" onclick="cambio();">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+  <img class="libro" src="assets/libro1.jpg" alt="Sherlock">
+</div>
+
+
+
+<div id="logo" class="marca">
+<img src="assets/tuslibros.png" alt="marcapagina" style=" width:45%;height:8%;">
+</div>
+
+            <div style="clear:both;"></div>
+	          <script type="text/javascript"> window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');</script>
+            <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="vendor/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="assets/todo.js"></script>
+
+            <script type="text/javascript">
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+                $(".task-container").droppable();
+                $(".todo-task").draggable({ revert: "valid", revertDuration:200 });
+                todo.init();
+            </script>
+
+        </div>
+    </body>
+</html>
