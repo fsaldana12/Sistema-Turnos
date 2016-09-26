@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>
+            
+            #contenedorPrimarioIzquierda{
+                width:25%;
+                height:100%;
+                margin: 0px 0px 0px 0px;
+                background-color:lightblue;
+                float: left;
+            }
+            #dia{
+                width:71%;
+                height:100%;
+                margin-left:2%;
+                margin-right:auto;
+                background-color:blue;
+                display:inline-block;
+                overflow:auto;
+            }
+
+            #calendario{
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:auto;
+                margin-bottom:10px;
+                width: 95%;
+                height:70%;
+                background-color: pink;
+            }
+            #medicos{
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:auto;
+                margin-bottom:20px;
+                width: 35%;
+                height: 8%;
+                background-color: yellow;
+            }
+            #buscadorPaciente{
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:auto;
+                margin-bottom:auto;
+                width: 95%;
+                height: 8%;
+                background-color: magenta;
+            }
+            #contenedorPrincipal{
+                width: 100%;
+                height: 60%;
+                background-color: lightgrey;
+            }
+            #contenedorSecundario{
+                width:100%;
+                height: 40%;
+                background-color: lightgreen;
+            }
+            #general{
+                width:1280px;
+                height:614px;
+            }
+
+            #contenedorSecundarioIzquierda{
+                float: left;
+                width:25%;
+                height:85%;
+                background-color:red;
+            }
+            #contenedorSecundarioDerecha{
+                margin-left:2%;
+                margin-right:2%;
+                width:71%;
+                height:85%;
+                background-color:brown;
+                display:inline-block;
+            }
+            #contenedorTab{
+                width:31%;
+                height:15%;
+                background-color:black;
+            }
+            #tabPrincipal{
+                height:100%;
+            }
+            #liPrincipal{
+                height:100%;
+            }
+            #calendarioCalendario{
+                max-width: 900px;
+                margin: 0 auto;
+                font-size: 11px;
+            }
+            h2 {
+                font-size:20px;
+            }
+
+        </style>
+
+        <meta charset='utf-8' />
+        <link href='../../src/fullcalendar-3.0.0/fullcalendar.css' rel='stylesheet' />
+        <link href='../../src/fullcalendar-3.0.0/fullcalendar.print.css' rel='stylesheet' media='print' />
+        <script src='../../src/fullcalendar-3.0.0/lib/moment.min.js'></script>
+        <script src='../../src/fullcalendar-3.0.0/lib/jquery.min.js'></script>
+        <script src='../../src/fullcalendar-3.0.0/fullcalendar.min.js'></script>
+        <!--<script src='../locale-all.js'></script>-->
+        <script src='../../src/fullcalendar-3.0.0/locale/es.js'></script>
+        <script>
+			
+            $(document).ready(function() {
+
+                $('#calendarioCalendario').fullCalendar({
+                    height: 260,
+                    defaultDate: '2016-09-12',
+                    editable: true,
+                    eventLimit: true, // allow "more" link when too many events
+                    //dayRender: function (date, cell) {
+					//	var today = new Date();
+					//	if (date.getDate() !== today.getDate()) {
+					//		cell.css("background-color", "red");
+					//	}
+					//},
+					//dayRender: function (date,cell) {
+						
+					//	cell.css("background-color", "red");
+					//	},
+                    dayClick: function(date, jsEvent, view) {
+						alert('Clicked on: ' + date.format());
+						alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+						alert('Current view: ' + view.name);
+						// change the day's background color just for fun
+						//$('#calendarioCalendario').fullCalendar('rerenderEvents');
+						$(this).css('background-color', 'green');
+					}
+                });
+                
+            });
+            
+//                        $(document).ready(function() {
+//
+//               $('#calendarioCalendario').fullCalendar({
+//    header: {
+//        left: 'prev,next today',
+//        center: 'title',
+//        right: 'month,basicWeek,basicDay'
+//    },
+    
+//    defaultView: 'month',
+
+//    dayRender: function (date, cell) {
+//        var today = new Date();
+//        if (date.getDate() !== today.getDate()) {
+//            cell.css("background-color", "red");
+//        }
+//    }
+//});
+//});
+
+    </script>
+    </head>
+    <body>
+        <div id='general'>
+            <div id='contenedorPrincipal'>
+                <div id='contenedorPrimarioIzquierda'>
+                    <div id='calendario'>
+                        <div id='calendarioCalendario'></div>
+                    </div>
+                    <div id='medicos'>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Medicos
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">Medico 1</a></li>
+                                <li><a href="#">Medico 2</a></li>
+                                <li><a href="#">Medico 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id='buscadorPaciente'>
+                        <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar Paciente...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ><span class='glyphicon glyphicon-search'></span></button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div id='dia'>dia</div>
+            </div>
+            <div id='contenedorSecundario'>
+                <div id='contenedorTab'>
+                    <ul id='tabPrincipal' class="nav nav-tabs"><!--sino rompe-->
+                        <li id='liPrincipal' role="presentation" class="active"><a id='liPrincipal' href="#">Doctor</a></li>
+                        <li id='liPrincipal' role="presentation"><a id='liPrincipal' href="#">Paciente</a></li>
+                        <li id='liPrincipal' role="presentation" class="dropdown">
+                            <a id='liPrincipal' class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Auxiliares <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">cosas1</a></li>
+                                <li><a href="#">cosas2</a></li>
+                                <li><a href="#">cosas3</a></li>
+                            </ul>
+                        </li>
+                        <li id='liPrincipal' role="presentation"><a id='liPrincipal' href="#">Nuevo Turno</a></li>
+                    </ul>
+                </div>
+                <div id='contenedorSecundarioIzquierda'>contenedor secundario izquierda</div>
+                <div id='contenedorSecundarioDerecha'>contenedor secundario derecha</div>
+            </div>
+        </div>
+    </body>
+</html>
