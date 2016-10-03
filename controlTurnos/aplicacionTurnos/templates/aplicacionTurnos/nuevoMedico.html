@@ -1,0 +1,35 @@
+{% extends 'aplicacionTurnos/baseABM.html' %}
+
+
+    {% block ABM %}
+        <h3>Formulario</h3>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p}}
+            <button type="submit" name="guardar" class="save btn btn-default">Guardar</button>
+        </form>
+    {% endblock%}
+
+    {% block tablas %}
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dni</td>
+                <td>Telefono</td>
+                <td>Correo</td>
+                <td>Especialidad</td>
+                <td>Horario</td>
+            </tr>
+            {% for medico in medicos %}
+                </tr>
+                    <td>{{medico.nombre}}</td>
+                    <td>{{medico.apellido}}</td>
+                    <td>{{medico.dni}}</td>
+                    <td>{{medico.telefono}}</td>
+                    <td>{{medico.fechaNacimiento}}</td>
+                    <td>{{medico.obraSocial}}</td>
+                    <td>{{medico.numeroObraSocial}}</td>
+                    <td><a href="#"><button class="editar btn btn-default">Editar</button></a></td>
+                </tr>
+            {% endfor %}
+    {% endblock %}

@@ -4,8 +4,6 @@ from django.utils import timezone
 import datetime
 # Create your models here.
 
-
-
 class HorarioTurno(models.Model):
     dia = models.DateField()
     horaInicio = models.TimeField()
@@ -137,4 +135,3 @@ class Turno(models.Model):
 
     def __str__(self):
         return str(self.estado)+' | '+str(self.horario)+' | '+str(self.medico)+' | '+str(self.paciente)+' | '+str(self.tratamiento)
-
